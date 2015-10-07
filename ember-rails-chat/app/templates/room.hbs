@@ -1,1 +1,9 @@
-{{outlet}}
+{{model.name}}
+<ul>
+{{#each model.messages as |model|}}
+  <li class="well">{{model.body}}</li>
+{{/each}}
+</ul>
+
+
+<!-- add new message component -->

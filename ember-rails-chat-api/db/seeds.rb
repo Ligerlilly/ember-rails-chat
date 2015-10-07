@@ -10,6 +10,7 @@ room4  = Room.create(name: "Miscellaneous")
 
 10.times do |n|
   Message.create(body: Faker::Lorem.sentence, author: author1, room: room1)
-  Message.create(body: Faker::Lorem.sentence, author: author2, room: room1)
-  Message.create(body: Faker::Lorem.sentence, author: author3, room: room2)
+  Message.create(body: Faker::Lorem.sentence, author: author2, room: room2)
+  Message.create(body: Faker::Lorem.sentence, author: author3, room: room3)
+  Message.create(body: Faker::Lorem.sentence, author: author3, room: room4)
 end

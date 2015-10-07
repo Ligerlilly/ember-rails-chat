@@ -12,7 +12,7 @@ class RoomsController < ApplicationController
   # GET /rooms/1
   # GET /rooms/1.json
   def show
-    render json: @room
+    render json: @room, include: ['messages']
   end
 
   # POST /rooms

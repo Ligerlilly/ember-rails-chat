@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     resources :messages, except: [:new, :edit]
   end
 
+  resources :messages, only: :index
+
   resources :authors, except: [:new, :edit] do
     resources :messages, except: [:new, :edit]
   end

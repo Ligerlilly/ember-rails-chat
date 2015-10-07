@@ -1,4 +1,5 @@
 class MessageSerializer < ActiveModel::Serializer
   attributes :id, :body
-  has_one :author
+  belongs_to :author
+  belongs_to :room
 end

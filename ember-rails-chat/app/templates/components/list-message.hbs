@@ -1,0 +1,14 @@
+{{yield}}
+<ul>
+{{#each sortedByDateMessages as |msg|}}
+  <!-- <li class="well">{{msg.body}} {{moment-from-now msg.date}}</li> -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4>{{msg.author.name}} <em>{{moment-from-now msg.date}}</em></h4>
+    </div>
+    <div class="panel-body">
+      {{msg.body}}
+    </div>
+  </div>
+{{/each}}
+</ul>

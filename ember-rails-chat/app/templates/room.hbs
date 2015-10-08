@@ -1,9 +1,8 @@
-{{model.name}}
-<ul>
-{{#each model.messages as |model|}}
-  <li class="well">{{model.body}}</li>
-{{/each}}
-</ul>
+<h1>{{model.name}}</h1>
+{{new-message saveMessage='saveMessage' room=model id='new-message'}}
+{{list-message room=model saveMessage='saveMessage'}}
+
+
 
 
 <!-- add new message component -->

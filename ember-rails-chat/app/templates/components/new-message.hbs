@@ -1,1 +1,28 @@
 {{yield}}
+{{#if newMsg}}
+  <form>
+    <div class='form-group'>
+      {{input value=author placeholder='Enter Author:' class='form-control'}}
+    </div>
+    <div class='form-group'>
+      {{textarea value=message placeholder='Enter Message:' class='form-control'}}
+    </div>
+    <button class='btn btn-success' {{action 'saveMessage'}}>Send</button>
+  </form>
+{{else}}
+  <button class='btn btn-primary' {{action 'showForm'}}>Add Msg</button>
+{{/if}}
+
+<!-- <form>
+  <div class="row">
+    <div class="col-md-2">
+      {{input value=author placeholder='Enter Author:' class='form-control'}}
+    </div>
+    <div class="col-md-8">
+      {{input value=message placeholder='Enter Message:' class='form-control'}}
+    </div>
+    <div class="col-md-2">
+      <button class='btn btn-success' {{action 'saveMessage'}}>Send</button>
+    </div>
+  </div>
+</form> -->

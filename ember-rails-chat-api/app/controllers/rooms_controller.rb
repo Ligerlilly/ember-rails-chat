@@ -6,13 +6,17 @@ class RoomsController < ApplicationController
   def index
     @rooms = Room.all
 
+
     render json: @rooms
   end
 
   # GET /rooms/1
   # GET /rooms/1.json
+#, include: ["messages"]
   def show
-    render json: @room, include: ['messages']
+    #byebug
+    @room.messages = @room.messages.last(5)
+    render json: @room, include: ['author']
   end
 
   # POST /rooms

@@ -2,7 +2,18 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.4'
 gem 'rails-api'
-gem 'spring', :group => :development
 gem 'active_model_serializers', '~>0.10.0.rc2'
 gem 'pg'
-gem 'faker', :group => :development
+gem 'rack-cors' # experimental
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+
+group :development do
+  gem 'byebug'
+  gem 'web-console'
+  gem 'spring'
+  gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'faker'
+end

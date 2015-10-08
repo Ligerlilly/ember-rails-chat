@@ -19,6 +19,10 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(message_params)
+    new_author = Author.find_or_create_by(name: params[:message][:author])
+    found_room = Room.find(params[:message][:room])
+    @message.author = new_author
+    @message.room   = found_room
 
     if @message.save
       render json: @message, status: :created, location: @message
@@ -54,6 +58,8 @@ class MessagesController < ApplicationController
     end
 
     def message_params
-      params.require(:message).permit(:author_id, :body)
+      puts params
+      # byebug
+      params.require(:message).permit(:body, :date)
     end
 end

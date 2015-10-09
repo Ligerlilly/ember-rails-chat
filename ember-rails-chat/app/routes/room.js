@@ -45,7 +45,10 @@ export default Ember.Route.extend({
               msg.set('date', response.data[i].attributes.date);
               msg.set('id', response.data[i].id);
               //response.data[i].relationships.author.data.id
-              msg.set('author.name', params.message.author );
+              if (i==4) {
+                msg.set('author.name', params.message.author );
+              }
+
 
               //debugger;
               i += 1;

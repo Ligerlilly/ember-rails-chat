@@ -1,26 +1,16 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :update, :destroy]
 
-  # GET /rooms
-  # GET /rooms.json
   def index
     @rooms = Room.all
-
-
     render json: @rooms
   end
 
-  # GET /rooms/1
-  # GET /rooms/1.json
-#, include: ["messages"]
   def show
-    #byebug
     @room.messages = @room.messages.last(5)
     render json: @room, include: ['author']
   end
 
-  # POST /rooms
-  # POST /rooms.json
   def create
     @room = Room.new(room_params)
 
@@ -31,8 +21,6 @@ class RoomsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /rooms/1
-  # PATCH/PUT /rooms/1.json
   def update
     @room = Room.find(params[:id])
 
@@ -43,11 +31,8 @@ class RoomsController < ApplicationController
     end
   end
 
-  # DELETE /rooms/1
-  # DELETE /rooms/1.json
   def destroy
     @room.destroy
-
     head :no_content
   end
 

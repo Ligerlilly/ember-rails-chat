@@ -6,9 +6,6 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  // this.route('room', { path: '/room/:room_id'}, function() {
-  //   this.route('messages', {path: 'messages'});
-  // });
   this.route('room', { path: '/rooms/:room_id/messages' });
   this.route('author', {});
 });

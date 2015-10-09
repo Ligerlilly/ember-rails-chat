@@ -63,9 +63,15 @@
 	}
 
 	/* alignment */
-	/*body { text-align: center; } */ /* Uncheck to have everything centered */
-	h1, h2, p { text-align: center; }
 
+	h1, h2, p {
+    text-align: center;
+  }
+
+.button-box {
+  text-align: left;
+  margin-left: 20px;
+}
 
 /* general
 ****************/
@@ -98,15 +104,15 @@ $huge-amount: 20%;
 /* buttons
 ***************/
 .btn {
-/*	color: ;*/
+  border-radius: 0;
+  a {
+    color: white !important;
+    text-decoration: none;
+  }
 }
 
 .btn-primary {
-/*	background-color: $base;*/
-/* color: $accent; */
-/*	&:hover {
-		;
-	}*/
+
 }
 
 .btn-default {
@@ -132,14 +138,6 @@ form .btn {
 }
 
 
-/* sports
-***************/
-// $sports-main: ;
-// $sports-alt: ;
-
-#sports-container {
-  background-color: blue;
-}
 
 #new-message {
   margin: $medium 0 $medium $medium;

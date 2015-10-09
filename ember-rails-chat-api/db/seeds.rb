@@ -1,16 +1,11 @@
-
-author1 = Author.create(name: Faker::Lorem.word)
-author2 = Author.create(name: Faker::Lorem.word)
-author3 = Author.create(name: Faker::Lorem.word)
-
 room1  = Room.create(name: "Entertainment")
 room2  = Room.create(name: "Sports")
 room3  = Room.create(name: "Politics")
 room4  = Room.create(name: "Miscellaneous")
 
-10.times do |n|
-  Message.create(body: Faker::Lorem.sentence, author: author1, room: room1)
-  Message.create(body: Faker::Lorem.sentence, author: author2, room: room2)
-  Message.create(body: Faker::Lorem.sentence, author: author3, room: room3)
-  Message.create(body: Faker::Lorem.sentence, author: author3, room: room4)
+5.times do |n|
+  Message.create(body: [Faker::Name.suffix, Faker::Hacker.verb, Faker::App.author].join(" "),  author:  Author.create(name: Faker::App.author), room: room1, date: Time.now)
+  Message.create(body: [Faker::Book.title, Faker::Team.sport, Faker::Team.sport].join(" "),     author:  Author.create(name: Faker::App.author), room: room2, date: Time.now)
+  Message.create(body: [Faker::Company.buzzword, Faker::Address.country, Faker::Company.catch_phrase].join(" "), author:  Author.create(name: Faker::App.author), room: room3, date: Time.now)
+  Message.create(body: [Faker::Hacker.ingverb, Faker::Hacker.adjective, Faker::Hacker.say_something_smart, Faker::Name.name].join(" ") ,      author:  Author.create(name: Faker::App.author), room: room4, date: Time.now)
 end

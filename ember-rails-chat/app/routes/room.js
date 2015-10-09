@@ -8,23 +8,6 @@ export default Ember.Route.extend({
   actions: {
     saveMessage(params) {
 
-      // var newMessage = this.store.createRecord('message', params);
-      // newMessage.save();
-      // // var room = params.room;
-
-
-      function callback() {
-
-
-        //window.location.reload();
-        //console.log('a;lsdkf;alskdjf;alksdfj');
-        //_this.transitionTo('index');
-      }
-      // // room.get('messages').addObject(newMessage);
-      // newMessage.save().then(function() {
-      //   // return room.save();
-      // });
-      // this.transitionTo('room', params.room);
     var room = params.message.room;
     params.message.room = params.message.room.get('id');
     $.ajax({
@@ -48,9 +31,6 @@ export default Ember.Route.extend({
               if (i==4) {
                 msg.set('author.name', params.message.author );
               }
-
-
-              //debugger;
               i += 1;
 
             });
@@ -59,8 +39,6 @@ export default Ember.Route.extend({
             console.log(res);
           }
         });
-        //callback();
-        // _this.transitionTo('room', params.message.room);
       });
     }
   }

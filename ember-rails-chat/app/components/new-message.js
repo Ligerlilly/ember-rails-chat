@@ -11,11 +11,13 @@ export default Ember.Component.extend({
         message: {
           author: this.get('author'),
           body: this.get('message'),
-          room: this.get('room').id,
+          room: this.get('room'),
           date: new Date()
         }
 
+
       };
+
       this.set('newMsg', false);
       this.sendAction('saveMessage', params);
     }
